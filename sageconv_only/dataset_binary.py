@@ -26,7 +26,6 @@ class YCBDataset(InMemoryDataset):
     def process(self):
         data_list = []
 
-        # process by session_id
         dataset = pd.read_csv('temp.csv')
         grouped = dataset.groupby('session_id')
         for session_id, group in tqdm(grouped):
